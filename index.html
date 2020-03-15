@@ -1,148 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 
-        <!-- Sign Up Start  -->
-        <div class="container h-100">
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+  <!-- Logged out nav -->
+  <nav id="navLoggedOut" class="navbar navbar-light bg-light justify-content-between">
+    <a class="navbar-brand">Brand</a>
+    <div class="form-inline">
+      <input id="loginEmail" class="form-control mr-2" type="text" placeholder="Email address" aria-label="Email address">
+      <input id="loginPassword" class="form-control mr-2" type="password" placeholder="Password" aria-label="Password">
+      <button id="loginButton" class="btn btn-outline-info my-2 mr-2">Login</button>
+      <button id="registerButton" class="btn btn-info my-2">Register</button>
+    </div>
+  </nav>
+
+  <!-- Logged in nav -->
+  <nav id="navLoggedIn" class="navbar navbar-light bg-light justify-content-between d-none">
+    <a class="navbar-brand">Brand</a>
+    <div class="form-inline">
+      <p class="my-2 mr-2">Hi, <span id="firstNameGreeting"></span>!</p>
+      <button id="myAccountButton" class="btn btn-info my-2 mr-2">My account</button>
+      <button id="logoutButton" class="btn btn-outline-info my-2">Logout</button>
+    </div>
+  </nav>
+  
+      <div class="container h-100">
         <div class="row h-100 justify-content-center align-items-center">
             <div class="col-10 col-md-8 col-lg-6">
-                <!-- Form -->
-                <form class="form-example" action="" method="post">
+                <!-- Sign Up Start -->
+                <form class="form-example">
                     <h1 class="mt-5">Sign Up</h1>
 
                     <!-- Input fields -->
                     <div class="form-group mt-5">
-                        <label for="firstName">First Name</label>
-                        <input type="text" class="form-control firstName" id="firstName"  name="firstName">
+                        <label for="registerFirstName">First Name</label>
+                        <input type="text" class="form-control" id="registerFirstName" name="registerFirstName">
                     </div>
                     <div class="form-group">
-                        <label for="lastName">Last Name</label>
-                        <input type="lastName" class="form-control lastName" id="lastName"      name="lastName">
+                        <label for="registerLastName">Last Name</label>
+                        <input type="text" class="form-control" id="registerLastName" name="registerLastName">
                     </div>
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control email" id="email"  name="email">
+                        <label for="registerEmail">Email</label>
+                        <input type="email" class="form-control" id="registerEmail" name="registerEmail">
                     </div>
                     <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control password" id="password"  name="password">
+                        <label for="registerPassword">Password</label>
+                        <input type="password" class="form-control" id="registerPassword" name="registerPassword">
                     </div>
 
-                    <button type="signUp" class="btn btn-primary btn-customized mt-5">Sign Up</button>
+                    <button type="submit" class="btn btn-primary btn-customized mt-5">Sign Up</button>
                     <!-- End input fields -->
-
                 </form>
-                <!-- Form end -->
-            </div>
-          </div>
-      </div>
-        <!-- Sign Up Finish -->
-
-
-    <!-- Edit Project Start  -->
-    <div class="container h-100">
-    <div class="row h-100 justify-content-center align-items-center">
-        <div class="col-10 col-md-8 col-lg-6">
-            <!-- Form -->
-            <form class="form-example" action="" method="post">
-
-                  <button type="delete" class="btn btn-primary btn-customized alight-right">Delete</button>
-                  <h1 class="mt-5"> Edit Project</h1>
+                <!-- Sign Up Finish -->
+              
+              <!-- Edit Profile Start  -->
+              <form class="form-example">
+                <button type="button" class="btn btn-primary btn-customized alight-right" id="deleteProfileButton">Delete</button>
+                <h1 class="mt-5"> Edit Profile</h1>
 
                 <!-- Input fields -->
                 <div class="form-group mt-5">
-                    <label for="username">Project Name</label>
-                    <input type="text" class="form-control projectName" id="projectName"  name="projectName">
+                    <label for="editFirstName">First Name</label>
+                    <input type="text" class="form-control" id="editFirstName"  name="editFirstName">
                 </div>
                 <div class="form-group">
-                    <label for="authorName">Author Name</label>
-                    <input type="authorName" class="form-control authorName" id="authorName" placeholder="Read Only" name="password">
+                    <label for="editLastName">Last Name</label>
+                    <input type="text" class="form-control" id="editLastName" name="editLastName">
                 </div>
                 <div class="form-group">
-                    <label for="Url">Url</label>
-                    <input type="Url" class="form-control Url" id="Url"  name="Url">
+                    <label for="editEmail">Email</label>
+                    <input type="email" class="form-control" id="editEmail"  name="editEmail">
                 </div>
-                <div>
-                    <label for="image">Image</label><br>
-                    <img src="..." class="rounded" alt="...">
-                </div>
-                <button type="Change Image" class="btn btn-primary btn-customized mt-2">Change Image</button><br>
-                <button type="Save" class="btn btn-primary btn-customized mt-5">Save</button>
+
+                <button type="button" class="btn btn-primary btn-customized mt-2">Change Password</button><br>
+                <button type="submit" class="btn btn-primary btn-customized mt-5">Save</button>
                 <!-- End input fields -->
 
             </form>
-            <!-- Form end -->
-        </div>
-      </div>
-  </div>
-    <!-- Edit Project Finish -->
-
-    <!-- Add Project start -->
-    <div class="container h-100">
-    <div class="row h-100 justify-content-center align-items-center">
-        <div class="col-10 col-md-8 col-lg-6">
-            <!-- Form -->
-            <form class="form-example" action="" method="post">
+              <!-- Edit Profile Finish -->
+              
+               <!-- Add Project start -->
+              <form class="form-example">
 
                 <h1 class="mt-5"> Add Project </h1>
 
                 <!-- Input fields -->
                 <div class="form-group mt-5">
-                    <label for="projectName">Project Name</label>
-                    <input type="text" class="form-control projectName" id="projectName"  name="projectName">
+                    <label for="addProjectName">Project Name</label>
+                    <input type="text" class="form-control" id="addProjectName"  name="addProjectName">
                 </div>
                 <div class="form-group">
-                    <label for="authorName">Author Name</label>
-                    <input type="authorName" class="form-control authorName" id="authorName" name="authorName">
+                    <label for="addAuthorName">Author Name</label>
+                    <input type="text" class="form-control" id="addAuthorName" name="addAuthorName" readonly>
                 </div>
                 <div class="form-group">
-                    <label for="Url">Url</label>
-                    <input type="Url" class="form-control Url" id="Url"  name="Url">
+                    <label for="addProjectUrl">Url</label>
+                    <input type="text" class="form-control" id="addProjectUrl"  name="addProjectUrl">
                 </div>
                 <div>
-                    <label for="image">Image</label><br>
-                    <img src="..." class="rounded" alt="...">
+                    <label for="addProjectImage">Image</label><br>
+                    <input type="text" class="form-control" id="addProjectImage"  name="addProjectImage">
                 </div>
 
-                <button type="Save" class="btn btn-primary btn-customized mt-5">Save</button>
+                <button type="submit" class="btn btn-primary btn-customized mt-5">Add Project</button>
                 <!-- End input fields -->
 
             </form>
-            <!-- Form end -->
-        </div>
-      </div>
-  </div>
-    <!-- Add Project Finish -->
+              <!-- Add Project Finish -->
+              
+              <!-- Edit Project Start  -->
+              <!-- Form -->
+            <form class="form-example">
 
-
-
-    <!-- Edit Profile Start  -->
-    <div class="container h-100">
-    <div class="row h-100 justify-content-center align-items-center">
-        <div class="col-10 col-md-8 col-lg-6">
-            <!-- Form -->
-            <form class="form-example" action="" method="post">
-                <button type="delete" class="btn btn-primary btn-customized alight-right">Delete</button>
-                <h1 class="mt-5"> Edit Profile</h1>
+                  <button type="button" class="btn btn-primary btn-customized alight-right" id="deleteProject">Delete</button>
+                  <h1 class="mt-5"> Edit Project</h1>
 
                 <!-- Input fields -->
                 <div class="form-group mt-5">
-                    <label for="firstName">First Name</label>
-                    <input type="text" class="form-control firstName" id="firstName"  name="firstName">
+                    <label for="editProjectName">Project Name</label>
+                    <input type="text" class="form-control" id="editProjectName"  name="editProjectName">
                 </div>
                 <div class="form-group">
-                    <label for="lastName">Last Name</label>
-                    <input type="lastName" class="form-control lastName" id="lastName"      name="lastName">
+                    <label for="editAuthorName">Author Name</label>
+                    <input type="text" class="form-control" id="editAuthorName" name="editAuthorName" readonly>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control email" id="email"  name="email">
+                    <label for="editProjectUrl">Project Url</label>
+                    <input type="text" class="form-control" id="editProjectUrl"  name="editProjectUrl">
                 </div>
-
-                <button type="changePassword" class="btn btn-primary btn-customized mt-2">Change Password</button><br>
-                <button type="Save" class="btn btn-primary btn-customized mt-5">Save</button>
+                <div>
+                    <label>Image</label><br>
+                    <img src="..." class="rounded" alt="...">
+                </div>
+                <button type="button" class="btn btn-primary btn-customized mt-2" id="editProjectImage">Change Image</button><br>
+                <button type="submit" class="btn btn-primary btn-customized mt-5" id="saveProjectButton">Save</button>
                 <!-- End input fields -->
 
             </form>
-            <!-- Form end -->
-        </div>
+            <!-- Edit Project Finish -->
+            </div>
+          </div>
       </div>
-  </div>
-    <!-- Edit Project Finish -->
+
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
