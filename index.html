@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+  <!-- Logged out nav -->
+  <nav id="navLoggedOut" class="navbar navbar-light bg-light justify-content-between">
+    <a class="navbar-brand">Brand</a>
+    <div class="form-inline">
+      <input id="email" class="form-control mr-2" type="text" placeholder="Email address" aria-label="Email address">
+      <input id="password" class="form-control mr-2" type="password" placeholder="Password" aria-label="Password">
+      <button id="loginButton" class="btn btn-outline-info my-2 mr-2">Login</button>
+      <button id="registerButton" class="btn btn-info my-2">Register</button>
+    </div>
+  </nav>
+
+  <!-- Logged in nav -->
+  <nav id="navLoggedIn" class="navbar navbar-light bg-light justify-content-between d-none">
+    <a class="navbar-brand">Brand</a>
+    <div class="form-inline">
+      <p class="my-2 mr-2">Hi, <span id="firstNameGreeting"></span>!</p>
+      <button id="myAccountButton" class="btn btn-info my-2 mr-2">My account</button>
+      <button id="logoutButton" class="btn btn-outline-info my-2">Logout</button>
+    </div>
+  </nav>
+
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
