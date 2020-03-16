@@ -3,172 +3,163 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>UpFolio</title>
 
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
 <body>
   <!-- Logged out nav -->
   <nav id="navLoggedOut" class="navbar navbar-light bg-light justify-content-between">
-    <a class="navbar-brand">Brand</a>
+    <a class="navbar-brand">UpFolio</a>
     <div class="form-inline">
       <input id="loginEmail" class="form-control mr-2" type="text" placeholder="Email address" aria-label="Email address">
       <input id="loginPassword" class="form-control mr-2" type="password" placeholder="Password" aria-label="Password">
-      <button id="loginButton" class="btn btn-outline-info my-2 mr-2">Login</button>
-      <button id="registerButton" class="btn btn-info my-2">Register</button>
+      <button id="loginButton" class="btn btn-outline-dark my-2 mr-2">Login</button>
+      <button id="registerButton" class="btn btn-dark my-2">Register</button>
     </div>
   </nav>
 
   <!-- Logged in nav -->
-  <nav id="navLoggedIn" class="navbar navbar-light bg-light justify-content-between d-none">
-    <a class="navbar-brand">Brand</a>
+  <nav id="navLoggedIn" class="navbar navbar-light bg-light justify-content-between">
+    <a class="navbar-brand">UpFolio</a>
     <div class="form-inline">
-      <p class="my-2 mr-2">Hi, <span id="firstNameGreeting"></span>!</p>
+      <p class="my-2 mr-3">Hi, <span id="firstNameGreeting"></span>!</p>
       <button id="myAccountButton" class="btn btn-info my-2 mr-2">My account</button>
       <button id="logoutButton" class="btn btn-outline-info my-2">Logout</button>
     </div>
   </nav>
   
-      <div class="container h-100">
-        <div class="row h-100 justify-content-center align-items-center">
-            <div class="col-10 col-md-8 col-lg-6">
-                <!-- Sign Up Start -->
-                <form class="form-example">
-                    <h1 class="mt-5">Sign Up</h1>
+  <div class="container-fluid h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+      <div class="row mt-5" id="card-output"></div>
+      <div class="col-10 col-md-8 col-lg-6">
+        <!-- Sign Up Start -->
+        <form class="form-example" id="registerForm">
+          <h1 class="mt-5">Sign Up</h1>
 
-                    <!-- Input fields -->
-                    <div class="form-group mt-5">
-                        <label for="registerFirstName">First Name</label>
-                        <input type="text" class="form-control" id="registerFirstName" name="registerFirstName">
-                    </div>
-                    <div class="form-group">
-                        <label for="registerLastName">Last Name</label>
-                        <input type="text" class="form-control" id="registerLastName" name="registerLastName">
-                    </div>
-                    <div class="form-group">
-                        <label for="registerEmail">Email</label>
-                        <input type="email" class="form-control" id="registerEmail" name="registerEmail">
-                    </div>
-                    <div class="form-group">
-                        <label for="registerPassword">Password</label>
-                        <input type="password" class="form-control" id="registerPassword" name="registerPassword">
-                    </div>
-
-                    <button type="submit" class="btn btn-primary btn-customized mt-5">Sign Up</button>
-                    <!-- End input fields -->
-                </form>
-                <!-- Sign Up Finish -->
-              
-              <!-- Edit Profile Start  -->
-              <form class="form-example">
-                <button type="button" class="btn btn-primary btn-customized alight-right" id="deleteProfileButton">Delete</button>
-                <h1 class="mt-5"> Edit Profile</h1>
-
-                <!-- Input fields -->
-                <div class="form-group mt-5">
-                    <label for="editFirstName">First Name</label>
-                    <input type="text" class="form-control" id="editFirstName"  name="editFirstName">
-                </div>
-                <div class="form-group">
-                    <label for="editLastName">Last Name</label>
-                    <input type="text" class="form-control" id="editLastName" name="editLastName">
-                </div>
-                <div class="form-group">
-                    <label for="editEmail">Email</label>
-                    <input type="email" class="form-control" id="editEmail"  name="editEmail">
-                </div>
-
-                <button type="button" class="btn btn-primary btn-customized mt-2">Change Password</button><br>
-                <div class="changePwdDiv mt-3">
-                  <div class="form-group">
-                    <label for="currentPwd">Current Password</label>
-                    <input type="password" class="form-control" id="currentPwd" name="currentPwd">
-                  </div>
-                  <div class="form-group">
-                      <label for="changePwd">New Password</label>
-                      <input type="password" class="form-control" id="changePwd"  name="changePwd">
-                  </div>
-                  <button type="button" class="btn btn-warning">Change Password</button>
-                </div>
-                <button type="submit" class="btn btn-primary btn-customized mt-5">Save</button>
-                <!-- End input fields -->
-
-            </form>
-              <!-- Edit Profile Finish -->
-              
-               <!-- Add Project start -->
-              <form class="form-example">
-
-                <h1 class="mt-5"> Add Project </h1>
-
-                <!-- Input fields -->
-                <div class="form-group mt-5">
-                    <label for="addProjectName">Project Name</label>
-                    <input type="text" class="form-control" id="addProjectName"  name="addProjectName">
-                </div>
-                <div class="form-group">
-                    <label for="addAuthorName">Author Name</label>
-                    <input type="text" class="form-control" id="addAuthorName" name="addAuthorName" readonly>
-                </div>
-                <div class="form-group">
-                    <label for="addProjectUrl">Url</label>
-                    <input type="text" class="form-control" id="addProjectUrl"  name="addProjectUrl">
-                </div>
-                <div>
-                    <label for="addProjectImage">Image</label><br>
-                    <input type="text" class="form-control" id="addProjectImage"  name="addProjectImage">
-                </div>
-
-                <button type="submit" class="btn btn-primary btn-customized mt-5">Add Project</button>
-                <!-- End input fields -->
-
-            </form>
-              <!-- Add Project Finish -->
-              
-              <!-- Edit Project Start  -->
-              <!-- Form -->
-            <form class="form-example">
-
-                  <button type="button" class="btn btn-primary btn-customized alight-right" id="deleteProject">Delete</button>
-                  <h1 class="mt-5"> Edit Project</h1>
-
-                <!-- Input fields -->
-                <div class="form-group mt-5">
-                    <label for="editProjectName">Project Name</label>
-                    <input type="text" class="form-control" id="editProjectName"  name="editProjectName">
-                </div>
-                <div class="form-group">
-                    <label for="editAuthorName">Author Name</label>
-                    <input type="text" class="form-control" id="editAuthorName" name="editAuthorName" readonly>
-                </div>
-                <div class="form-group">
-                    <label for="editProjectUrl">Project Url</label>
-                    <input type="text" class="form-control" id="editProjectUrl"  name="editProjectUrl">
-                </div>
-                <div>
-                    <label>Image</label><br>
-                    <img src="..." class="rounded" alt="...">
-                </div>
-                <button type="button" class="btn btn-primary btn-customized mt-2" id="editProjectImage">Change Image</button><br>
-                <div class="changeImgDiv mt-3">
-                  <div class="form-group">
-                      <label for="changeImg">New Image URL</label>
-                      <input type="text" class="form-control" id="changeImg"  name="changeImg">
-                  </div>
-                </div>
-                <button type="submit" class="btn btn-primary btn-customized mt-5" id="saveProjectButton">Save</button>
-                <!-- End input fields -->
-
-            </form>
-            <!-- Edit Project Finish -->
-            </div>
+          <!-- Input fields -->
+          <div class="form-group mt-5">
+            <label for="registerFirstName">First Name</label>
+            <input type="text" class="form-control" id="registerFirstName" name="registerFirstName">
           </div>
+          <div class="form-group">
+            <label for="registerLastName">Last Name</label>
+            <input type="text" class="form-control" id="registerLastName" name="registerLastName">
+          </div>
+          <div class="form-group">
+            <label for="registerEmail">Email</label>
+            <input type="email" class="form-control" id="registerEmail" name="registerEmail">
+          </div>
+          <div class="form-group">
+            <label for="registerPassword">Password</label>
+            <input type="password" class="form-control" id="registerPassword" name="registerPassword">
+          </div>
+
+          <button type="button" class="btn btn-primary btn-customized mt-3" id="registerUser">Sign Up</button>
+          <!-- End input fields -->
+        </form>
+        <!-- Sign Up Finish -->
+
+        <!-- Edit Profile Start  -->
+        <form class="form-example" id="editProfileForm">
+          <button type="button" class="btn btn-primary btn-customized alight-right" id="deleteProfileButton">Delete</button>
+          <h1 class="mt-5"> Edit Profile</h1>
+
+          <!-- Input fields -->
+          <div class="form-group mt-5">
+            <label for="editFirstName">First Name</label>
+            <input type="text" class="form-control" id="editFirstName"  name="editFirstName">
+          </div>
+          <div class="form-group">
+            <label for="editLastName">Last Name</label>
+            <input type="text" class="form-control" id="editLastName" name="editLastName">
+          </div>
+          <div class="form-group">
+            <label for="editEmail">Email</label>
+            <input type="email" class="form-control" id="editEmail"  name="editEmail">
+          </div>
+
+          <button type="button" class="btn btn-primary btn-customized mt-2">Change Password</button><br>
+          <div class="changePwdDiv mt-3">
+            <div class="form-group">
+              <label for="currentPwd">Current Password</label>
+              <input type="password" class="form-control" id="currentPwd" name="currentPwd">
+            </div>
+            <div class="form-group">
+              <label for="changePwd">New Password</label>
+              <input type="password" class="form-control" id="changePwd"  name="changePwd">
+            </div>
+            <button type="button" class="btn btn-warning">Change Password</button>
+          </div>
+          <button type="submit" class="btn btn-primary btn-customized mt-5">Save</button>
+          <!-- End input fields -->
+        </form>
+        <!-- Edit Profile Finish -->
       </div>
+    </div>
+  </div>  <!-- container END -->
+
+  <div class="container-fluid" id="account">
+    <div class="mb-5" id="profile"></div>
+    <div class="mx-auto mb-5 col-10 col-md-8 col-lg-6">
+      <!-- Add Project start -->
+      <form class="form-example"  id="addProjectForm">
+        <h1 class="mt-5"> Add Project </h1>
+        <!-- Input fields -->
+        <div class="form-group mt-5">
+          <label for="addProjectName">Project Name</label>
+          <input type="text" class="form-control" id="addProjectName"  name="addProjectName">
+        </div>
+        <div class="form-group">
+          <label for="addAuthorName">Author Name</label>
+          <input type="text" class="form-control" id="addAuthorName" name="addAuthorName" readonly>
+        </div>
+        <div class="form-group">
+          <label for="addProjectUrl">Url</label>
+          <input type="text" class="form-control" id="addProjectUrl"  name="addProjectUrl">
+        </div>
+        <div>
+          <label for="addProjectImage">Image</label><br>
+          <input type="text" class="form-control" id="addProjectImage"  name="addProjectImage">
+        </div>
+
+        <button type="button" id="addProject" class="btn btn-primary btn-customized mt-5">Add Project</button>
+        <!-- End input fields -->
+      </form>
+      <!-- Add Project Finish -->
+      <!-- Edit Project Start  -->
+      <form class="form-example"  id="editProjectForm">
+        <h1 class="mt-5"> Edit Project</h1>
+
+        <!-- Input fields -->
+        <div class="form-group mt-5">
+          <label for="editProjectName">Project Name</label>
+          <input type="text" class="form-control" id="editProjectName"  name="editProjectName">
+        </div>
+        <div class="form-group">
+          <label for="editAuthorName">Author Name</label>
+          <input type="text" class="form-control" id="editAuthorName" name="editAuthorName" readonly>
+        </div>
+        <div class="form-group">
+          <label for="editProjectUrl">Project Url</label>
+          <input type="text" class="form-control" id="editProjectUrl"  name="editProjectUrl">
+        </div>
+        <div>
+          <label for="editProjectImg">Image</label>
+          <input type="text" class="form-control" id="editProjectImg"  name="editProjectImg">
+        </div>
+        <button type="button" class="btn btn-primary btn-customized mt-3" id="saveProjectButton">Save</button>
+        <!-- End input fields -->
+      </form>
+      <!-- Edit Project Finish -->
+    </div>
+    <div class="mb-5 row" id="myProjects"></div>
+  </div>
 
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
   <script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
