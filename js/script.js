@@ -83,6 +83,10 @@ $(document).ready(function(){
 
   // show register
   $('#registerButton').click(function(){
+    $('#registerFirstName').val('');
+    $('#registerLastName').val('');
+    $('#registerEmail').val('');
+    $('#registerPassword').val('');
     $('#registerForm').show();
     $('#card-output').hide();
   });
@@ -239,6 +243,10 @@ $(document).ready(function(){
   $('#myAccountButton').click(function(){
     $('#card-output').hide();
     showMyProjects();
+  });
+
+  $('#cancelProjectButton').click(function(){
+    $('#editProjectForm').slideUp();
   });
 
   // show my projects
